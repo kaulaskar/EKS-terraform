@@ -138,3 +138,12 @@ resource "aws_eks_addon" "ebs-csi" {
   }
 }
 
+resource "aws_eks_addon" "vpc-cni" {
+  cluster_name             = module.eks.cluster_name
+  addon_name               = "vpc-cni"
+  addon_version            = "v1.10.0-eksbuild.1"
+  tags = {
+    "eks_addon" = "vpc-cni"
+  }
+}
+
