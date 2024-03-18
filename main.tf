@@ -70,22 +70,6 @@ module "eks" {
       desired_size = 1
     }
 
-    two = {
-      name = "node-group-2"
-
-      instance_types = ["t3.small"]
-      min_size       = 1
-      max_size       = 4
-      desired_size   = 3
-    }
-    three = {
-      name = "node-group-5"
-
-      instance_types = ["t3.small"]
-      min_size       = 2
-      max_size       = 4
-      desired_size   = 2
-    }
 
     backtend = {
       name = "node-group-4"
@@ -97,8 +81,8 @@ module "eks" {
       desired_size = 1
     }
 
-
-    frontend = {
+    
+    frontend = {  
       name = "node-group-3"
 
       instance_types = ["t2.small"]
