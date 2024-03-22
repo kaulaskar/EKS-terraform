@@ -81,6 +81,16 @@ module "eks" {
       desired_size = 1
     }
 
+    database = {
+      name = "node-group-5"
+
+      instance_types = ["t3.small"]
+
+      min_size     = 1
+      max_size     = 2
+      desired_size = 1
+    }
+
     
     frontend = {  
       name = "node-group-3"
