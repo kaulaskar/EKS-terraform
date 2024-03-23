@@ -60,19 +60,9 @@ module "eks" {
   }
 
   eks_managed_node_groups = {
-    one = {
-      name = "node-group-1"
-
-      instance_types = ["t3.small"]
-
-      min_size     = 1
-      max_size     = 3
-      desired_size = 1
-    }
-
-
+    
     backtend = {
-      name = "node-group-4"
+      name = "node-group-1"
 
       instance_types = ["t2.small"]
 
@@ -82,7 +72,7 @@ module "eks" {
     }
 
     database = {
-      name = "node-group-5"
+      name = "node-group-2"
 
       instance_types = ["t3.small"]
 
@@ -132,11 +122,11 @@ resource "aws_eks_addon" "ebs-csi" {
   }
 }
 
-resource "aws_eks_addon" "vpc-cni" {
-  cluster_name             = module.eks.cluster_name
-  addon_name               = "vpc-cni"
-  tags = {
-    "eks_addon" = "vpc-cni"
-  }
-}
+# resource "aws_eks_addon" "vpc-cni" {
+#   cluster_name             = module.eks.cluster_name
+#   addon_name               = "vpc-cni"
+#   tags = {
+#     "eks_addon" = "vpc-cni"
+#   }
+# }
 
