@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "devopsremotestate2"
-    key    = "dev/terraform.tfstate"
+    bucket = "test-eks-sailesh"
+    key    = "terraform.tfstate"
     region = "us-east-1"
   }
 }
